@@ -1,0 +1,130 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "'Ricty Diminished',Menlo, Monaco, 'Courier New', monospace",
+    "editor.tokenColorCustomizations": {
+      "semanticHighlighting.enabled": true
+    },
+    "editor.minimap.enabled": false,
+    "php.suggest.basic": false,
+    "html.format.wrapLineLength": 0,
+    "html.format.wrapAttributes": "aligned-multiple",
+    "files.associations": {
+      "*.blade.php": "blade",
+      ".crontab": "shellscript"
+    },
+    "intelephense.diagnostics.undefinedClassConstants": false,
+    "intelephense.diagnostics.undefinedConstants": false,
+    "intelephense.diagnostics.undefinedFunctions": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedProperties": false,
+    "intelephense.diagnostics.undefinedTypes": false,
+    "intelephense.diagnostics.undefinedSymbols": false,
+    "intelephense.diagnostics.typeErrors": false,
+    "intelephense.diagnostics.undefinedVariables": false,
+    "intelephense.diagnostics.unusedSymbols": false,
+    "intelephense.diagnostics.implementationErrors": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.cursorSurroundingLinesStyle": "all",
+    "editor.cursorSurroundingLines": 1,
+    "editor.cursorWidth": 1,
+    "editor.fontSize": 13,
+    "debug.console.fontSize": 14,
+    "workbench.colorTheme": "One Monokai 80s Plus",
+    "todohighlight.keywords": [
+      {
+        "text": "NOTE:",
+        "color": "grey",
+        "backgroundColor": "yellow",
+        "overviewRulerColor": "grey"
+      }
+    ],
+    "diffEditor.renderSideBySide": false,
+    "terminal.integrated.fontSize": 14,
+    "editor.lineHeight": 13,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.largeFileOptimizations": false,
+    "change-case.default": [
+      "snake_case",
+      "param-case",
+      "camelCase",
+      "PascalCase",
+      "CONST_CASE"
+    ],
+    "editor.overviewRulerBorder": false,
+    "prettier.proseWrap": "never",
+    "prettier.printWidth": 1000,
+    "prettier.singleQuote": true,
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    },
+    "liveServer.settings.donotVerifyTags": true,
+    "typescript.format.enable": false,
+    "editor.tabSize": 4,
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true
+    },
+    "intelephense.format.enable": true,
+    "editor.formatOnSave": true,
+    "beautify.language": {
+      "js": {
+        "type": [
+          "javascript",
+          "json",
+          "jsonc"
+        ],
+        "filename": [
+          ".jshintrc",
+          ".jsbeautifyrc",
+          ".json"
+        ]
+      },
+      "css": [
+        "css",
+        "less",
+        "scss"
+      ],
+      "html": [
+        "htm",
+        "html",
+        "blade"
+      ]
+    },
+    "emmet.includeLanguages": {
+      "blade": "html"
+    },
+    "[blade]": {
+      "editor.defaultFormatter": "apility.beautify-blade",
+      "editor.autoClosingBrackets": "languageDefined"
+    },
+    "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "michelemelluso.code-beautifier"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "michelemelluso.code-beautifier"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "octref.vetur"
+    },
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultLocation": "editor",
+    "window.zoomLevel": 1,
+    "favorites.resources": [
+      "app/Http/Controllers",
+      "routes",
+      "resources/views",
+      "database"
+    ],
+    "favorites.sortDirection": "ASC",
+  }
