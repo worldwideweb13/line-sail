@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Api'], function () {
+    Route::post('/line/callback', 'LineBotController@callback')->name('line.callback');
+});
