@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::group(['namespace' => 'Api'], function () {
     Route::post('/line/callback', 'LineBotController@callback')->name('line.callback');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
