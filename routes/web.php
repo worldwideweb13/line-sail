@@ -16,7 +16,7 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;
 
 Route::get('/', function () {
-    return view('pages.user.home');
+    return view('welcome');
 });
 
 Route::group(['namespace' => 'Api'], function () {
