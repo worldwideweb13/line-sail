@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-Route::prefix('user')->name('user.')->namespace('User')->middleware('verified')->group(function () {
+Route::prefix('user')->name('user.')->namespace('User')->middleware('verified', 'can:isUser')->group(function () {
     Route::resource('LineChannelController', LineChannelController::class);
 });
 
