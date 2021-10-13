@@ -24,7 +24,7 @@ class LineChannelController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.user.channels_create');
     }
 
     /**

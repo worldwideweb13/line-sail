@@ -13,13 +13,16 @@
 
 //user
 Auth::routes(['verify' => true]);
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
+Route::prefix('user')->name('user.')->namespace('User')->middleware('verified')->group(function () {
+    Route::resource('LineChannelController', LineChannelController::class);
+});
 
 Route::group(['namespace' => 'Api'], function () {
     Route::post('/line/callback', 'LineBotController@callback')->name('line.callback');
