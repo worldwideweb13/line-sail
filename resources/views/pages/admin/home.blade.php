@@ -19,7 +19,7 @@
                 {{ session('status') }}
             </div>
         @endif
-        このページはユーザーTOP画面です。
+        このページは管理者TOP画面です。
     </div>
 </div>
 @endsection
