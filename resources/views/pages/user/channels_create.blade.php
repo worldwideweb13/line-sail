@@ -9,61 +9,26 @@
 @section('side-menu')
 @include('parts.user.side-menu')
 @endsection
-<div class="col-md-9">
-    <form>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            </div>
+<h5 class="text-center">チャンネル新規登録</h5>
+<form class="mt-4" action="{{ route('user.LineChannelController.store') }}" method="POST">
+    {{ csrf_filed() }}
+    <div class="form-group">
+        <label for="channelName">チャネル名</label>
+        <input type="text" class="form-control" id="channelName" placeholder="チャンネル基本設定を参照">
+    </div>
+    <div class="form-group">
+        <label for="channelSecret">チャネルシークレット</label>
+        <input type="text" class="form-control" id="channelSecret" placeholder="チャンネル基本設定を参照">
+    </div>
+    <div class="form-group">
+        <label for="channelAccessToken">チャネルアクセストークン</label>
+        <input type="text" class="form-control" id="channelAccessToken" placeholder="MessagingAPIを参照">
+    </div>
+    <div class="form-group">
+        <div class="text-right">
+            <button class="btn btn-outline-secondary" onclick="history.back(-1)">戻る</button>
+            <button type="submit" class="btn btn-success">登録</button>
         </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-        </div>
-        <fieldset class="form-group">
-            <div class="row">
-                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                            First radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                        <label class="form-check-label" for="gridRadios2">
-                            Second radio
-                        </label>
-                    </div>
-                    <div class="form-check disabled">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                        <label class="form-check-label" for="gridRadios3">
-                            Third disabled radio
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-        <div class="form-group row">
-            <div class="col-sm-2">Checkbox</div>
-            <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>
+</form>
 @endsection
