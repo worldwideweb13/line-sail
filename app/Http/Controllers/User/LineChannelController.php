@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
+use app\Models\LineChannel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LineChannelController extends Controller
 {
@@ -24,7 +26,7 @@ class LineChannelController extends Controller
      */
     public function create()
     {
-        return view('pages.user.channels_create');
+        return view('pages.user.line_channel.channels_create');
     }
 
     /**
@@ -35,7 +37,14 @@ class LineChannelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lineChannel = new LineChannel;
+        $lineChannel->line_channel_name = $request->channelName;
+        $lineChannel->line_channel_secret = $request->channelSecret;
+        $lineChannel->line_access_token = $request->channelAccessToken;
+        $lineChannel->user_id = Auth::id();
+        $lineChannel->save();
+
+        return redirect()->route('user.home');
     }
 
     /**

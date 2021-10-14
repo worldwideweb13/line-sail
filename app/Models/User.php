@@ -51,4 +51,14 @@ class User extends Authenticatable implements MustVerifyEmailContract
     {
         $this->notify(new CustomResetPassword($token));
     }
+
+    // LineIdが空欄で送られた時、nullに形式を変換する
+    public function setLineIdAttribute($value)
+    {
+        if (empty($value)) {
+            $this->attributes['line_id'] = NULL;
+        } else {
+            $this->attributes['line_id'] = $value;
+        }
+    }
 }
