@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
-use app\Models\LineChannel;
 use App\Http\Controllers\Controller;
+use App\Models\LineChannel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,8 +16,11 @@ class LineChannelController extends Controller
      */
     public function index()
     {
-
-        return view('pages.user.line_channel.channels_index');
+        $lineChannels = LineChannel::orderBy('created_at', 'asc')->paginate(10);
+        // dd($lineChannels);
+        return view('pages.user.line_channel.channels_index', [
+            'lineChannels' => $lineChannels
+        ]);
     }
 
     /**
@@ -27,11 +30,7 @@ class LineChannelController extends Controller
      */
     public function create()
     {
-        $lineChannels = LineChannel::orderBy('created_at', 'desc');
-        dd($lineChannels);
-        return view('pages.user.line_channel.channels_create', [
-            'lineChannels' => $lineChannels
-        ]);
+        return view('pages.user.line_channel.channels_create');
     }
 
     /**
