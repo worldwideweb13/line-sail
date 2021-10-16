@@ -4,7 +4,7 @@
             <a data-toggle="collapse" href="#menu01" aria-controls="#menu01" aria-expanded="false">Lineチャンネル</a>
         </li>
         <ul id="menu01" class="collapse" data-parent="#accordion_menu">
-            <li><a href="">チャンネル一覧</a></li>
+            <li><a href="{{ route('user.LineChannelController.index') }}">チャンネル一覧</a></li>
             <li><a href="{{ route('user.LineChannelController.create') }}">チャンネル登録</a></li>
         </ul>
         <li>

@@ -16,7 +16,8 @@ class LineChannelController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('pages.user.line_channel.channels_index');
     }
 
     /**
@@ -26,7 +27,11 @@ class LineChannelController extends Controller
      */
     public function create()
     {
-        return view('pages.user.line_channel.channels_create');
+        $lineChannels = LineChannel::orderBy('created_at', 'desc');
+        dd($lineChannels);
+        return view('pages.user.line_channel.channels_create', [
+            'lineChannels' => $lineChannels
+        ]);
     }
 
     /**
