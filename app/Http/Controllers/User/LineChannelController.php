@@ -68,9 +68,9 @@ class LineChannelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(LineChannel $lineChannel)
     {
-        //
+        return view('pages.user.line_channel.channels_edit', ['lineChannel' => $lineChannel]);
     }
 
     /**
