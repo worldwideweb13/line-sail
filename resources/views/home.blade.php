@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@push('style')
+    {{-- サイドメニューのスタイルシート --}}
+    <link href="{{ asset('css/layouts/user/side-menu.css') }}" rel="stylesheet">
+@endpush
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,7 +14,7 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    @if(session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
