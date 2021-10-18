@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('style')
-{{-- サイドメニューのスタイルシート --}}
 <link href="{{ asset('css/layouts/user/side-menu.css') }}" rel="stylesheet">
 @endsection
-
 
 @section('content')
 @section('side-menu')

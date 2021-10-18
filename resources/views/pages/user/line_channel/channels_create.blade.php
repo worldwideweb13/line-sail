@@ -4,7 +4,6 @@
 <link href="{{ asset('css/layouts/user/side-menu.css') }}" rel="stylesheet">
 @endsection
 
-
 @section('content')
 @section('side-menu')
 @include('parts.user.side-menu')
