@@ -1,0 +1,42 @@
+[
+    {
+        "type": "Directory",
+        "name": "/Users/ogasawarasatoru/project/Yukadan/line-sail/app/Http/Controllers",
+        "parent_id": null,
+        "workspaceRoot": "/Users/ogasawarasatoru/project/Yukadan/line-sail",
+        "workspacePath": "app/Http/Controllers",
+        "id": "nxmFLjB6yOaMJbWd"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/ogasawarasatoru/project/Yukadan/line-sail/app/Models",
+        "parent_id": null,
+        "workspaceRoot": "/Users/ogasawarasatoru/project/Yukadan/line-sail",
+        "workspacePath": "app/Models",
+        "id": "cZvPhiC4Y7V3BmSG"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/ogasawarasatoru/project/Yukadan/line-sail/routes",
+        "parent_id": null,
+        "workspaceRoot": "/Users/ogasawarasatoru/project/Yukadan/line-sail",
+        "workspacePath": "routes",
+        "id": "pi6ClWJLkRdegb5c"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/ogasawarasatoru/project/Yukadan/line-sail/resources/views",
+        "parent_id": null,
+        "workspaceRoot": "/Users/ogasawarasatoru/project/Yukadan/line-sail",
+        "workspacePath": "resources/views",
+        "id": "GK3Si61EC05LYRed"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/ogasawarasatoru/project/Yukadan/line-sail/database",
+        "parent_id": null,
+        "workspaceRoot": "/Users/ogasawarasatoru/project/Yukadan/line-sail",
+        "workspacePath": "database",
+        "id": "zSflDdwjJ81OyBU7"
+    }
+]

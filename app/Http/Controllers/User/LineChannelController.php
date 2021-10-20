@@ -79,9 +79,14 @@ class LineChannelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, LineChannel $lineChannel)
     {
-        //
+        $lineChannel->line_channel_name = $request->line_channel_name;
+        $lineChannel->line_access_token = $request->line_access_token;
+        $lineChannel->line_channel_secret = $request->line_channel_secret;
+        $lineChannel->save();
+
+        return redirect()->route('user.lineChannel.index');
     }
 
     /**
