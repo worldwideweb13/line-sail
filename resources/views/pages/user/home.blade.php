@@ -1,13 +1,6 @@
 @extends('layouts.app')
 
-@section('style')
-<link href="{{ asset('css/layouts/user/side-menu.css') }}" rel="stylesheet">
-@endsection
-
 @section('content')
-@section('side-menu')
-@include('parts.user.side-menu')
-@endsection
 <div class="card">
     <div class="card-header">Dashboard</div>
 

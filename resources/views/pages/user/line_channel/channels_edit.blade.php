@@ -1,14 +1,6 @@
 @extends('layouts.app')
 
-@section('style')
-<link href="{{ asset('css/layouts/user/side-menu.css') }}" rel="stylesheet">
-@endsection
-
-
 @section('content')
-@section('side-menu')
-@include('parts.user.side-menu')
-@endsection
 <h5 class="text-center">チャンネル新規登録</h5>
 <form class="mt-4" action="{{ route('user.lineChannel.store') }}" method="POST">
     @csrf
