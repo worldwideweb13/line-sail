@@ -30,8 +30,8 @@
                         <a class="btn btn-outline-danger btn-delete" data-toggle="modal" data-target="#deleteModal" data-action-url="{{ route('user.lineChannel.destroy', $lineChannel->id) }}">削除</a>
                     </td>
                 </tr>
+            @endforeach
         </tbody>
-        @endforeach
     </table>
     <div class="mt-3 d-flex justify-content-center">
         {{ $lineChannels->links() }}
@@ -53,8 +53,8 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">キャンセル</button>
                     <form id="destroy-form" method="POST">
-                        @csrf
                         @method('delete')
+                        @csrf
                         <button type="submit" class="btn btn-outline-danger">削除</button>
                     </form>
                 </div>
@@ -67,9 +67,8 @@
 @endsection
 
 @section('script')
-<script>
+<script type="module">
     $('.btn-delete').click(function (e) {
-        console.log($('#destroy-form').attr('action'));
         $('#destroy-form').attr('action', $(this).data('action-url'));
     });
 

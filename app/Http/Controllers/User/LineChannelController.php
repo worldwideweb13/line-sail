@@ -17,7 +17,6 @@ class LineChannelController extends Controller
     public function index()
     {
         $lineChannels = LineChannel::orderBy('created_at', 'asc')->paginate(10);
-        // dd($lineChannels);
         return view('pages.user.line_channel.channels_index', [
             'lineChannels' => $lineChannels
         ]);
