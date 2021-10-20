@@ -2,6 +2,7 @@
 
 @section('content')
 <h5 class="text-center">登録チャンネル一覧</h5>
+
 <div class=" mt-3 list-group list-group-flush">
     <table class="table table-borderless table-hover">
         <thead>
@@ -63,6 +64,6 @@
     $('.btn-delete').click(function (e) {
         $('#destroy-form').attr('action', $(this).data('action-url'));
     });
-
+    
 </script>
 @endsection
