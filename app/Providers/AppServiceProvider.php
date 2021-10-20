@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use LINE\LINEBot;
+use App\Models\LineChannel;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $channelLists = LineChannel::orderBy('created_at', 'asc')->get();
+        view()->share('channelLists', $channelLists);
     }
 
     /**
