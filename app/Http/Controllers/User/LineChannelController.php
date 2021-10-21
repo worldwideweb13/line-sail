@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\LineChannel;
 use Illuminate\Http\Request;
+use App\Http\Requests\User\LineChannelRequest;
 use Illuminate\Support\Facades\Auth;
 
 class LineChannelController extends Controller
@@ -38,7 +39,7 @@ class LineChannelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LineChannelRequest $request)
     {
         $lineChannel = new LineChannel;
         $lineChannel->line_channel_name = $request->channelName;
@@ -79,7 +80,7 @@ class LineChannelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LineChannel $lineChannel)
+    public function update(LineChannelRequest $request, LineChannel $lineChannel)
     {
         $lineChannel->line_channel_name = $request->line_channel_name;
         $lineChannel->line_access_token = $request->line_access_token;

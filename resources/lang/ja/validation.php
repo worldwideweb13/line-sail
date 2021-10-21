@@ -131,8 +131,8 @@ return [
         ],
     ],
     'attributes'           => [
-        'password' => 'パスワード',
-        'title' => 'タイトル',
-        'body' => '本文',
+        'line_channel_name' => 'チャンネルの名前',
+        'line_access_token' => 'ラインアクセストークン',
+        'line_channel_secret' => 'ラインチャンネルシークレット',
     ],
 ];
