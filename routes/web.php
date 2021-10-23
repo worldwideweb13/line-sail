@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::prefix('user')->name('user.')->namespace('User')->middleware('verified', 'can:isUser')->group(function () {
     Route::resource('lineChannel', 'LineChannelController', ['except' => ['show']]);
+    Route::resource('pushMessage', 'pushMessageController', ['except' => ['show']]);
 });
 
 Route::group(['namespace' => 'Api'], function () {
