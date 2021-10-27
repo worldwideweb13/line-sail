@@ -3,7 +3,7 @@
 @section('content')
 <h5 class="text-center">登録チャンネル一覧</h5>
 
-<div class=" mt-3 list-group list-group-flush">
+<div class="mt-3 list-group list-group-flush">
     <table class="table table-borderless table-hover">
         <thead>
             <tr style="border-bottom: 1.4px solid; border-color: #ced1d3;">
