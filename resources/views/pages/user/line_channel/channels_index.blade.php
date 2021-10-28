@@ -64,6 +64,5 @@
     $('.btn-delete').click(function (e) {
         $('#destroy-form').attr('action', $(this).data('action-url'));
     });
-    
 </script>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePushMessagesTable extends Migration
+class CreatePushMessageMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreatePushMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('push_messages', function (Blueprint $table) {
+        Schema::create('push_message_members', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('line_channel_id');
-            $table->text('message_text', 5000);
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreatePushMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('push_messages');
+        Schema::dropIfExists('push_message_members');
     }
 }
