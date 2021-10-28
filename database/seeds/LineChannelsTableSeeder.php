@@ -16,7 +16,7 @@ class LineChannelsTableSeeder extends Seeder
     public function run()
     {
         $LineChannels = [];
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 15; $i++) {
             $LineChannels[] = [
                 'user_id' => 3,
                 'line_channel_name' => "ラインチャンネル No{$i}",
