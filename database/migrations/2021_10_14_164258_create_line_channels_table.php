@@ -20,6 +20,10 @@ class CreateLineChannelsTable extends Migration
             $table->char('line_channel_secret', 32);
             $table->char('line_access_token', 172);
             $table->timestamps();
+
+            // UsersTableのidと紐付け
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unique(['id', 'user_id']);
         });
     }
 
