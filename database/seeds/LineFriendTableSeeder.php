@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+use App\Models\LineFriend;
 
-class PushMessageSeeder extends Seeder
+class LineFriendTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

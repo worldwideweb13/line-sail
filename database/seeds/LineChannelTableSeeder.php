@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use App\Models\LineChannel;
 
 
-class LineChannelsTableSeeder extends Seeder
+class LineChannelTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,16 +15,16 @@ class LineChannelsTableSeeder extends Seeder
      */
     public function run()
     {
-        $LineChannels = [];
+        $lineChannels = [];
         for ($i = 1; $i <= 15; $i++) {
-            $LineChannels[] = [
+            $lineChannels[] = [
                 'user_id' => 3,
                 'line_channel_name' => "ラインチャンネル No{$i}",
                 'line_channel_secret' => Str::random(32),
                 'line_access_token' => Str::random(172),
-                'created_at' => Carbon::today()->subDays(101 - $i),
+                'created_at' => Carbon::today()->subDays(16 - $i),
             ];
         }
-        LineChannel::insert($LineChannels);
+        LineChannel::insert($lineChannels);
     }
 }
