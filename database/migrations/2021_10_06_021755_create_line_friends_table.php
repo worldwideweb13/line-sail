@@ -15,9 +15,13 @@ class CreateLineFriendsTable extends Migration
     {
         Schema::create('line_friends', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('line_id', 64)->unique();
+            $table->unsignedBigInteger('user_id');
             $table->string('display_name', 64);
             $table->timestamps();
+
+            // UsersTableのidと紐付け
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unique(['id', 'user_id']);
         });
     }
 

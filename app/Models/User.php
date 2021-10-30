@@ -40,10 +40,11 @@ class User extends Authenticatable implements MustVerifyEmailContract
         'email_verified_at' => 'datetime',
     ];
 
-    // public function lineChannels()
-    // {
-    //     return $this->hasMany('App\Models\LineChannel');
-    // }
+    // LineChannelsの一対多の関係
+    public function lineChannels()
+    {
+        return $this->hasMany('App\Models\LineChannel');
+    }
 
     //確認通知メールをUserに紐付ける
     public function sendEmailVerificationNotification()

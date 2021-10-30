@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
             'role' => 'user',
             'email' => 'user@test.com',
             'email_verified_at' => $now,
-            'line_id' => 'Ueb565a8867f27feddd67c447edfec6d3',
+            'line_user_id' => 'Ueb565a8867f27feddd67c447edfec6d3',
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => $now,
