@@ -13,6 +13,6 @@ class LineFriendTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(LineFriend::class, 225)->create();
     }
 }
