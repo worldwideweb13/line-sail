@@ -16,6 +16,7 @@ class CreateLineFriendsTable extends Migration
         Schema::create('line_friends', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->string('friend_id', 33)->unique();
             $table->string('display_name', 64);
             $table->timestamps();
 
