@@ -17,12 +17,14 @@ class LineChannelTableSeeder extends Seeder
     {
         $lineChannels = [];
         for ($i = 1; $i <= 15; $i++) {
+            $now = Carbon::today()->subDays(16 - $i);
             $lineChannels[] = [
                 'user_id' => 3,
                 'line_channel_name' => "ラインチャンネル No{$i}",
                 'line_channel_secret' => Str::random(32),
                 'line_access_token' => Str::random(172),
-                'created_at' => Carbon::today()->subDays(16 - $i),
+                'created_at' => $now,
+                'updated_at' => $now,
             ];
         }
         LineChannel::insert($lineChannels);

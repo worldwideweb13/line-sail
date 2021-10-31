@@ -17,10 +17,12 @@ class PushMessageTableSeeder extends Seeder
         $pushMessages = [];
         for ($i = 1; $i <= 15; $i++) {
             for ($x = 1; $x <= 15; $x++) {
+                $now = Carbon::today()->subDays(16 - $x);
                 $pushMessages[] = [
                     'line_channel_id' => $i,
                     'message_text' => "ラインチャンネル No{$i}のメッセージNo.{$x}です。\n\nこちらはプッシュメッセージのテキストサンプルです。テキストメッセージは5000文字以内のメッセージをチャンネルメンバーに配信できます。",
-                    'created_at' => Carbon::today()->subDays(16 - $x),
+                    'created_at' => $now,
+                    'updated_at' => $now,
                 ];
             }
         }
