@@ -17,9 +17,9 @@ class LineChannelLineFriendSeeder extends Seeder
         // LineChannelTableからidを配列型式で全件取得
         $lineChannelId = LineChannel::pluck('id')->all();
         $lineFriendlId = LineFriend::pluck('id')->all();
+        $now = Carbon::today();
 
         foreach ($lineFriendlId as $i => $friendId) {
-            $now = Carbon::today();
             DB::table('line_channel_line_friend')->insert([
                 'line_channel_id' => $lineChannelId[array_rand($lineChannelId)],
                 'line_friend_id' => $friendId,
