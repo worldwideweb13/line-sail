@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PushMessageTableSeeder::class);
         $this->call(LineFriendTableSeeder::class);
         $this->call(LineChannelLineFriendSeeder::class);
+        $this->call(LineFriendPushMessageSeeder::class);
     }
 }
