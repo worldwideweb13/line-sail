@@ -22,7 +22,8 @@ Route::get('/', function () {
 
 Route::prefix('user')->name('user.')->namespace('User')->middleware('verified', 'can:isUser')->group(function () {
     Route::resource('lineChannel', 'LineChannelController', ['except' => ['show']]);
-    Route::resource('pushMessage', 'pushMessageController', ['except' => ['show']]);
+    // Route::resource('pushMessage', 'pushMessageController', ['except' => ['show']]);
+    Route::get('/pushMessage/{channelList}', 'PushMessageController@index')->name('pushMessage.index');
 });
 
 Route::group(['namespace' => 'Api'], function () {

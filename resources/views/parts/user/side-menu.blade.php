@@ -19,7 +19,7 @@
         </li>
         <ul id="menu03" class="collapse" data-parent="#accordion_menu">
             @foreach( $channelLists as $channelList)
-                <li><a href="{{ route('user.pushMessage.index') }}">{{ $channelList->line_channel_name }}</a></li>
+                <li><a href="{{ route('user.pushMessage.index', $channelList->id) }}">{{ $channelList->line_channel_name }}</a></li>
             @endforeach
         </ul>
     </ul>
