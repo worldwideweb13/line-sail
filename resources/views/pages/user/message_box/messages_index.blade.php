@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h5 class="text-center">hogehoge送信メッセージ一覧</h5>
+<h5 class="text-center">{{ $lineChannel->line_channel_name }} 送信メッセージ一覧</h5>
 
+{{-- タブ見出し --}}
 <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="messageList-tab" data-toggle="tab" href="#messageList" role="tab" aria-controls="messageList" aria-selected="true">送信メッセージ</a>
@@ -19,12 +20,17 @@
         <div class="row mt-3">
             <div class="col-12">
                 <div class="list-group list-group-flush" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action bg-light" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">テキストメッセージ見出し</p>
-                            <small>3 days ago</small>
-                        </div>
-                    </a>
+                    @foreach($pushMessages as $pushMessage)
+                        <a class="list-group-item list-group-item-action bg-light" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1 mr-1">{{ Str::limit($pushMessage->message_text, 50) }}</p>
+                                <small>{{ $pushMessage->created_at->format('Y.m.d') }}</small>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+                <div class="mt-3 d-flex justify-content-center">
+                    {{ $pushMessages->links() }}
                 </div>
             </div>
         </div>
@@ -33,12 +39,14 @@
         <div class="row mt-3">
             <div class="col-12">
                 <div class="list-group list-group-flush" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action bg-light" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">ogasawara@13</p>
-                            <small>3 days ago</small>
-                        </div>
-                    </a>
+                    @foreach($lineFriends as $lineFriend)
+                        <a class="list-group-item list-group-item-action bg-light" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1">{{ $lineFriend->display_name }}</p>
+                                <small>3 days ago</small>
+                            </div>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
