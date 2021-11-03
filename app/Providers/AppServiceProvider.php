@@ -16,8 +16,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $channelLists = LineChannel::orderBy('created_at', 'asc')->get();
-        // view()->share('channelLists', $channelLists);
+        $channelLists = LineChannel::orderBy('created_at', 'asc')->get();
+        view()->share('channelLists', $channelLists);
     }
 
     /**

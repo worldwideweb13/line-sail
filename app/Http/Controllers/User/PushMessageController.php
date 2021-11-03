@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\LineChannel;
 
 class PushMessageController extends Controller
 {
@@ -12,8 +13,9 @@ class PushMessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(LineChannel $channelList)
     {
+
         return view('pages.user.message_box.messages_index');
     }
 
