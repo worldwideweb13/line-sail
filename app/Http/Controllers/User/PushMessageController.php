@@ -5,6 +5,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\LineChannel;
+use App\Models\PushMessage;
+use App\Models\LineFriend;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class PushMessageController extends Controller
 {
@@ -15,8 +19,16 @@ class PushMessageController extends Controller
      */
     public function index(LineChannel $channelList)
     {
-
-        return view('pages.user.message_box.messages_index');
+        $channelId = $channelList->id;
+        $pushMessages = PushMessage::where('line_channel_id', $channelId)->paginate(10);
+        $lineFriends = LineFriend::whereHas('lineChannels', function ($q) use ($channelId) {
+            $q->where('line_channel_id', $channelId);
+        })->get();
+        return view('pages.user.message_box.messages_index', [
+            'pushMessages' => $pushMessages,
+            'lineFriends' => $lineFriends,
+            'lineChannel' => $channelList,
+        ]);
     }
 
     /**
