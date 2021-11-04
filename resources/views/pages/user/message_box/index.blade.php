@@ -21,7 +21,7 @@
             <div class="col-12">
                 <div class="list-group list-group-flush" id="list-tab" role="tablist">
                     @foreach($pushMessages as $pushMessage)
-                        <a class="list-group-item list-group-item-action bg-light" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
+                        <a href="{{ route('user.pushMessage.show', $pushMessage->id) }}" class="list-group-item list-group-item-action bg-light">
                             <div class="d-flex justify-content-between">
                                 <p class="mb-1 mr-1">{{ Str::limit($pushMessage->message_text, 50) }}</p>
                                 <small>{{ $pushMessage->created_at->format('Y.m.d') }}</small>
@@ -40,10 +40,9 @@
             <div class="col-12">
                 <div class="list-group list-group-flush" id="list-tab" role="tablist">
                     @foreach($lineFriends as $lineFriend)
-                        <a class="list-group-item list-group-item-action bg-light" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">
+                        <a class="list-group-item list-group-item-action bg-light">
                             <div class="d-flex justify-content-between">
                                 <p class="mb-1">{{ $lineFriend->display_name }}</p>
-                                <small>3 days ago</small>
                             </div>
                         </a>
                     @endforeach
@@ -87,6 +86,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 @section('script')

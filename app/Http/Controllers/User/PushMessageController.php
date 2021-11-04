@@ -8,7 +8,6 @@ use App\Models\LineChannel;
 use App\Models\PushMessage;
 use App\Models\LineFriend;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 
 class PushMessageController extends Controller
 {
@@ -24,7 +23,7 @@ class PushMessageController extends Controller
         $lineFriends = LineFriend::whereHas('lineChannels', function ($q) use ($channelId) {
             $q->where('line_channel_id', $channelId);
         })->get();
-        return view('pages.user.message_box.messages_index', [
+        return view('pages.user.message_box.index', [
             'pushMessages' => $pushMessages,
             'lineFriends' => $lineFriends,
             'lineChannel' => $channelList,
@@ -60,7 +59,7 @@ class PushMessageController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pages.user.message_box.show');
     }
 
     /**
