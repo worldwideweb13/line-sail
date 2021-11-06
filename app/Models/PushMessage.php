@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class PushMessage extends Model
 {
 
+    public function next()
+    {
+        return PushMessage::where('line_channel_id', $this->line_channel_id)->where('id', '>', $this->id)->orderBy('id', 'asc')->first();
+    }
+
+    public function prev()
+    {
+        return PushMessage::where('line_channel_id', $this->line_channel_id)->where('id', '<', $this->id)->orderBy('id', 'desc')->first();
+    }
+
     // LineChannelに多対一の関係
     public function lineChannel()
     {
