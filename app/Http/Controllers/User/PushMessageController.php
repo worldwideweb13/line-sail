@@ -57,9 +57,9 @@ class PushMessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(PushMessage $pushMessage)
     {
-        return view('pages.user.message_box.show');
+        return view('pages.user.message_box.show', compact('pushMessage'));
     }
 
     /**
