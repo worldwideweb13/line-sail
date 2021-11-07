@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Facades\LineBotFacade;
+use App\Models\LineChannel;
 use App\Http\Controllers\Controller;
 use App\Services\Line\Event\FollowService;
 use App\Services\Line\Event\RecieveLocationService;
@@ -17,11 +19,14 @@ class LineBotController extends Controller
      * @param Request $request
      * @throws \LINE\LINEBot\Exception\InvalidSignatureException
      */
-    public function callback(Request $request)
+    public function callback(LineChannel $lineChannel)
     {
 
         /** @var LINEBot $bot */
-        $bot = app('line-bot');
+        $parameters['line_access_token'] = $lineChannel->line_access_token;
+        $parameters['line_channel_secret'] = $lineChannel->line_channel_secret;
+
+        $bot = LineBot::class([$parameters]);
 
         $signature = $_SERVER['HTTP_' . LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
         if (!LINEBot\SignatureValidator::validateSignature($request->getContent(), env('LINE_CHANNEL_SECRET'), $signature)) {

@@ -27,13 +27,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // LINE BOT
+        // LINE API first logic
         $this->app->bind('line-bot', function ($app, array $parameters) {
             // $parametersを見て、SECRETとかTOKENをDBとかNoSQLから取ってくることが多い
             return new LINEBot(
-                new LINEBot\HTTPClient\CurlHTTPClient(env('LINE_ACCESS_TOKEN')),
-                ['channelSecret' => env('LINE_CHANNEL_SECRET')]
+                new LINEBot\HTTPClient\CurlHTTPClient($parameters['line_access_token']),
+                ['channelSecret' => $parameters['line_channel_secret']]
             );
         });
+
+        // LinePushMessageAPIロジック
+
     }
 }
