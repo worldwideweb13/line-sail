@@ -25,9 +25,9 @@ class LineChannelRequest extends FormRequest
     {
         return [
             // 'line_channel_name' => 'required|string|between:1,255',
-            'line_channel_name' => 'required',
-            'line_access_token' => 'required|alpha_dash',
-            'line_channel_secret' => 'required|alpha_num',
+            'line_channel_name' => 'required|string|between:1,255',
+            'line_access_token' => 'required|alpha_dash|string|size:172',
+            'line_channel_secret' => 'required|alpha_num|string|size:32',
             // 'line_channel_name' => ['required', 'max:100'],
             // 'line_access_token' => ['required', 'alpha_dash', 'size:172'],
             // 'line_channel_secret' => ['required', 'alpha_dash', 'size:32'],

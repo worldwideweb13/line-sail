@@ -19,7 +19,11 @@ class PushMessageController extends Controller
     public function index(LineChannel $channelList)
     {
         $channelId = $channelList->id;
-        $pushMessages = PushMessage::where('line_channel_id', $channelId)->paginate(10);
+        // $pushMessages = PushMessage::where('line_channel_id', $channelId)->paginate(10, ['*'], 'pushMessagePage')->appends(["lineFriendPage" => $channelList->input('lineFriendPage')]);
+        $pushMessages = PushMessage::where('line_channel_id', $channelId)->paginate(5);
+        // $lineFriends = LineFriend::whereHas('lineChannels', function ($q) use ($channelId) {
+        //     $q->where('line_channel_id', $channelId);
+        // })->paginate(5, ['*'], 'lineFriendPage')->appends(["pushMessagePage" => $request->input('pushMessagePage')]);
         $lineFriends = LineFriend::whereHas('lineChannels', function ($q) use ($channelId) {
             $q->where('line_channel_id', $channelId);
         })->get();

@@ -47,6 +47,9 @@
                         </a>
                     @endforeach
                 </div>
+                <div class="mt-3 d-flex justify-content-center">
+                    {{ $pushMessages->links() }}
+                </div>
             </div>
         </div>
     </div>
