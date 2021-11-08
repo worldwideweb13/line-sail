@@ -16,7 +16,7 @@ class LineChannel extends Model
     // PushMessageTableに一対多の関係
     public function PushMessages()
     {
-        return $this->hasMany('app/Models/PushMessage');
+        return $this->hasMany('app\Models\PushMessage');
     }
 
 

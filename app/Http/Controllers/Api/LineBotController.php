@@ -10,6 +10,7 @@ use App\Services\Line\Event\RecieveLocationService;
 use App\Services\Line\Event\RecieveTextService;
 use Illuminate\Http\Request;
 use LINE\LINEBot;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 class LineBotController extends Controller
 {
@@ -26,51 +27,53 @@ class LineBotController extends Controller
         $parameters['line_access_token'] = $lineChannel->line_access_token;
         $parameters['line_channel_secret'] = $lineChannel->line_channel_secret;
 
-        $bot = LineBot::class([$parameters]);
+        $bot = LineBot::class($parameters);
 
-        $signature = $_SERVER['HTTP_' . LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
-        if (!LINEBot\SignatureValidator::validateSignature($request->getContent(), env('LINE_CHANNEL_SECRET'), $signature)) {
-            abort(400);
-        }
+        $textMessage = new TextMessageBuilder('テストメッセージ');
 
-        $events = $bot->parseEventRequest($request->getContent(), $signature);
-        foreach ($events as $event) {
-            $reply_token = $event->getReplyToken();
-            $reply_message = 'その操作はサポートしてません。.[' . get_class($event) . '][' . $event->getType() . ']';
+        // $signature = $_SERVER['HTTP_' . LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
+        // if (!LINEBot\SignatureValidator::validateSignature($request->getContent(), env('LINE_CHANNEL_SECRET'), $signature)) {
+        //     abort(400);
+        // }
 
-            switch (true) {
-                    //友達登録＆ブロック解除
-                case $event instanceof LINEBot\Event\FollowEvent:
-                    $service = new FollowService($bot);
-                    $reply_message = $service->execute($event)
-                        ? '友達登録されたからLINE ID引っこ抜いたわー'
-                        : '友達登録されたけど、登録処理に失敗したから、何もしないよ';
+        // $events = $bot->parseEventRequest($request->getContent(), $signature);
+        // foreach ($events as $event) {
+        //     $reply_token = $event->getReplyToken();
+        //     $reply_message = 'その操作はサポートしてません。.[' . get_class($event) . '][' . $event->getType() . ']';
 
-                    break;
-                    //メッセージの受信
-                case $event instanceof LINEBot\Event\MessageEvent\TextMessage:
-                    $service = new RecieveTextService($bot);
-                    $reply_message = $service->execute($event);
-                    break;
+        //     switch (true) {
+        //             //友達登録＆ブロック解除
+        //         case $event instanceof LINEBot\Event\FollowEvent:
+        //             $service = new FollowService($bot);
+        //             $reply_message = $service->execute($event)
+        //                 ? '友達登録されたからLINE ID引っこ抜いたわー'
+        //                 : '友達登録されたけど、登録処理に失敗したから、何もしないよ';
 
-                    //位置情報の受信
-                case $event instanceof LINEBot\Event\MessageEvent\LocationMessage:
-                    $service = new RecieveLocationService($bot);
-                    $reply_message = $service->execute($event);
-                    break;
+        //             break;
+        //             //メッセージの受信
+        //         case $event instanceof LINEBot\Event\MessageEvent\TextMessage:
+        //             $service = new RecieveTextService($bot);
+        //             $reply_message = $service->execute($event);
+        //             break;
 
-                    //選択肢とか選んだ時に受信するイベント
-                case $event instanceof LINEBot\Event\PostbackEvent:
-                    break;
-                    //ブロック
-                case $event instanceof LINEBot\Event\UnfollowEvent:
-                    break;
-                default:
-                    $body = $event->getEventBody();
-                    logger()->warning('Unknown event. [' . get_class($event) . ']', compact('body'));
-            }
+        //             //位置情報の受信
+        //         case $event instanceof LINEBot\Event\MessageEvent\LocationMessage:
+        //             $service = new RecieveLocationService($bot);
+        //             $reply_message = $service->execute($event);
+        //             break;
 
-            $bot->replyText($reply_token, $reply_message);
-        }
+        //             //選択肢とか選んだ時に受信するイベント
+        //         case $event instanceof LINEBot\Event\PostbackEvent:
+        //             break;
+        //             //ブロック
+        //         case $event instanceof LINEBot\Event\UnfollowEvent:
+        //             break;
+        //         default:
+        //             $body = $event->getEventBody();
+        //             logger()->warning('Unknown event. [' . get_class($event) . ']', compact('body'));
+        //     }
+
+        //     $bot->replyText($reply_token, $reply_message);
+        // }
     }
 }
