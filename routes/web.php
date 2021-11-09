@@ -27,6 +27,6 @@ Route::prefix('user')->name('user.')->namespace('User')->middleware('verified', 
     Route::get('/pushMessage/{pushMessage}/show', 'PushMessageController@show')->name('pushMessage.show');
 });
 
-Route::group(['namespace' => 'Api'], function () {
+Route::prefix('user')->name('user.')->namespace('Api')->middleware('verified', 'can:isUser')->group(function () {
     Route::post('/line/callback', 'LineBotController@callback')->name('line.callback');
 });
