@@ -20,8 +20,9 @@ class LineBotController extends Controller
      * @param Request $request
      * @throws \LINE\LINEBot\Exception\InvalidSignatureException
      */
-    public function callback(LineChannel $lineChannel)
+    public function callback(Request $request)
     {
+        dd($request);
 
         /** @var LINEBot $bot */
         $parameters['line_access_token'] = $lineChannel->line_access_token;

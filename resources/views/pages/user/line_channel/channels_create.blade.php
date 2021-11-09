@@ -13,7 +13,6 @@
         </div>
     </div>
 @endif
-
 <h5 class="text-center">チャンネル新規登録</h5>
 <form class="mt-4" action="{{ route('user.lineChannel.store') }}" method="POST">
     @csrf

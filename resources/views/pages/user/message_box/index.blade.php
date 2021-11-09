@@ -47,9 +47,6 @@
                         </a>
                     @endforeach
                 </div>
-                <div class="mt-3 d-flex justify-content-center">
-                    {{ $pushMessages->links() }}
-                </div>
             </div>
         </div>
     </div>
@@ -60,7 +57,7 @@
                 <textarea type="email" class="form-control" id="textArea" rows="3"></textarea>
             </div>
             <div class="col-10 text-right mt-3">
-                <button type="submit" class="btn btn-success btn-submit" data-toggle="modal" data-target="#submitModal" data-action-url="">投稿する</button>
+                <button type="button" class="btn btn-success btn-message-submit" data-toggle="modal" data-target="#submitModal" data-action-url="">投稿する</button>
             </div>
         </div>
 
@@ -77,13 +74,13 @@
                     <div class="modal-body">
                         チャンネルメンバーにメッセージが送信されます。送信されたメッセージは取り消しができませんのでご注意下さい。
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">キャンセル</button>
-                        <form id="submit-form" method="POST">
-                            @csrf
+                    <form id="message-submit-form" method="POST" action="{{ route('user.line.callback', $lineChannel) }}">
+                        @csrf
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">キャンセル</button>
                             <button type="submit" class="btn btn-outline-success">送信</button>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -94,9 +91,9 @@
 
 @section('script')
 <script type="module">
-    $('.btn-submit').click(function (e) {
-        console.log('ok');
-        $('#submit-form').attr('action', $(this).data('action-url'));
+    $('.btn-message-submit').click(function (e) {
+        console.log("ok");
+        $('.modal-footer').after("");
     });
 </script>
 @endsection
