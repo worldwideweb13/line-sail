@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use LINE\LINEBot;
 use App\Models\LineChannel;
+use LINE\LINEBot;
 
 class AppServiceProvider extends ServiceProvider
 {
