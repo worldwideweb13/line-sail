@@ -74,7 +74,7 @@
                     <div class="modal-body">
                         チャンネルメンバーにメッセージが送信されます。送信されたメッセージは取り消しができませんのでご注意下さい。
                     </div>
-                    <form id="message-submit-form" method="POST" action="{{ route('user.line.callback', $lineChannel) }}">
+                    <form id="message-submit-form" method="POST" action="{{ route('user.line.callback') }}">
                         @csrf
                         <input type="hidden" name="lineChannelId">
                         <input type="hidden" name="pushMessage">

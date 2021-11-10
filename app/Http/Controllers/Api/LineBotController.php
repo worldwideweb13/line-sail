@@ -5,10 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Facades\LineBotFacade;
 use App\Models\LineChannel;
 use App\Http\Controllers\Controller;
-use App\Services\Line\Event\FollowService;
-use App\Services\Line\Event\RecieveLocationService;
-use App\Services\Line\Event\RecieveTextService;
 use Illuminate\Http\Request;
+
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
@@ -22,15 +21,23 @@ class LineBotController extends Controller
      */
     public function callback(Request $request)
     {
-        dd($request);
+        $lineChannel = LineChannel::where('id', $request->lineChannelId)->first();
+        // $parameters['line_access_token'] = $lineChannel->line_access_token;
+        // $parameters['line_channel_secret'] = $lineChannel->line_channel_secret;
+        $parameters['line_access_token'] = "uLJEus/5bxh7mxE0BVzV+qQHyq1kmSzhTybEbWpz4CBNOPuUfjLzXnjP/nzJACHzgXFPMv62G8J9K1sJ9cHt5wepjyW5HEACRz1BQzhW/7xzIORtO3ytB31ZaP+hZgnHTIu75uUBOX9HgHfrgv2zfgdB04t89/1O/w1cDnyilFU=";
+        $parameters['line_channel_secret'] = "708b22fac68be653a6bcdb7fd2c4ef4b";
+
+
+        $bot = new LINEBot(
+            new LINEBot\HTTPClient\CurlHTTPClient($parameters['line_access_token']),
+            ['channelSecret' => $parameters['line_channel_secret']]
+        );
 
         /** @var LINEBot $bot */
-        $parameters['line_access_token'] = $lineChannel->line_access_token;
-        $parameters['line_channel_secret'] = $lineChannel->line_channel_secret;
+        $bot = app(LineBotFacade::class, ['parameters' => $parameters]);
+        $textMessage = new TextMessageBuilder($request->pushMessage);
 
-        $bot = LineBot::class($parameters);
-
-        $textMessage = new TextMessageBuilder('テストメッセージ');
+        $bot->pushMessage($lineChannel->user_id, $textMessage);
 
         // $signature = $_SERVER['HTTP_' . LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
         // if (!LINEBot\SignatureValidator::validateSignature($request->getContent(), env('LINE_CHANNEL_SECRET'), $signature)) {
@@ -76,5 +83,6 @@ class LineBotController extends Controller
 
         //     $bot->replyText($reply_token, $reply_message);
         // }
+        return redirect()->route('user.pushMessage.index', $lineChannel->id);
     }
 }
