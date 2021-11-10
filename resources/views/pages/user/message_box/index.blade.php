@@ -54,7 +54,7 @@
         <div class="form-group row mt-3">
             <label for="textArea" class="col-sm-2 col-form-label">メッセージ本文</label>
             <div class="col-sm-8">
-                <textarea type="email" class="form-control" id="textArea" rows="3"></textarea>
+                <textarea type="text" class="form-control" id="textArea" rows="3"></textarea>
             </div>
             <div class="col-10 text-right mt-3">
                 <button type="button" class="btn btn-success btn-message-submit" data-toggle="modal" data-target="#submitModal" data-action-url="">投稿する</button>
@@ -76,8 +76,10 @@
                     </div>
                     <form id="message-submit-form" method="POST" action="{{ route('user.line.callback', $lineChannel) }}">
                         @csrf
+                        <input type="hidden" name="lineChannelId">
+                        <input type="hidden" name="pushMessage">
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">キャンセル</button>
+                            <button type="cancel-button" class="btn btn-outline-secondary" data-dismiss="modal">キャンセル</button>
                             <button type="submit" class="btn btn-outline-success">送信</button>
                         </div>
                     </form>
@@ -91,9 +93,19 @@
 
 @section('script')
 <script type="module">
+    //プッシュメッセージ送信
     $('.btn-message-submit').click(function (e) {
-        console.log("ok");
-        $('.modal-footer').after("");
+
+        let lineChannelId = @json($lineChannel->id);
+        let pushMessage = $("#textArea").val();
+        $('input[name="lineChannelId"]').val(lineChannelId);
+        $('input[name="pushMessage"]').val(pushMessage);
+    });
+
+    //pushMessage送信キャンセル押下時の挙動
+    $('.cancel-button').click(function(){
+        $('input[name="lineChannelId"]').val('');
+        $('input[name="pushMessage"]').val('');        
     });
 </script>
 @endsection
