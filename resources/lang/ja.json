@@ -24,6 +24,8 @@
     "Added.": "追加完了",
     "Address": "住所",
     "Address Line 2": "住所２",
+    "Administrator": "管理者",
+    "Administrator users can perform any action.": "管理者はすべてのアクションを実行可能です。",
     "Afghanistan": "アフガニスタン",
     "Aland Islands": "オーランド諸島",
     "Albania": "アルバニア",
@@ -130,7 +132,7 @@
     "Colombia": "コロンビア",
     "Comoros": "コモロ",
     "Confirm": "確認",
-    "Confirm Password": "パスワード\n（確認用）",
+    "Confirm Password": "パスワード（確認用）",
     "Confirm Payment": "お支払いの確認",
     "Confirm your :amount payment": ":amount 個のお支払いを確認",
     "Congo": "コンゴ",
@@ -189,6 +191,8 @@
     "Edit": "編集",
     "Edit :resource": ":resourceを編集",
     "Edit Attached": "添付を編集",
+    "Editor": "編集者",
+    "Editor users have the ability to read, create, and update.": "編集者は読み込み、作成、更新ができます。",
     "Egypt": "エジプト",
     "El Salvador": "エルサルバドル",
     "Email": "メールアドレス",
@@ -355,7 +359,7 @@
     "Morocco": "モロッコ",
     "Mozambique": "モザンビーク",
     "Myanmar": "ミャンマー",
-    "Name": "ニックネーム",
+    "Name": "氏名",
     "Namibia": "ナミビア",
     "Nauru": "ナウル",
     "Nepal": "ネパール",
@@ -705,6 +709,5 @@
     "Zambia": "ザンビア",
     "Zimbabwe": "ジンバブエ",
     "Zip \/ Postal Code": "郵便番号",
-    "Åland Islands": "Åland Islands",
-    "E-Mail Address": "メールアドレス"
+    "Åland Islands": "Åland Islands"
 }
