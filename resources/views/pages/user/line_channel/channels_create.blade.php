@@ -18,15 +18,15 @@
     @csrf
     <div class="form-group">
         <label for="channelName">チャネル名</label>
-        <input type="text" class="form-control" id="channelName" placeholder="チャンネル基本設定を参照">
+        <input type="text" class="form-control" id="channelName" name="line_channel_name" placeholder="チャンネル基本設定を参照">
     </div>
     <div class="form-group">
         <label for="channelSecret">チャネルシークレット</label>
-        <input type="text" class="form-control" id="channelSecret" placeholder="チャンネル基本設定を参照">
+        <input type="text" class="form-control" id="channelSecret" name="line_channel_secret" placeholder="チャンネル基本設定を参照">
     </div>
     <div class="form-group">
         <label for="channelAccessToken">チャネルアクセストークン</label>
-        <input type="text" class="form-control" id="channelAccessToken" placeholder="MessagingAPIを参照">
+        <input type="text" class="form-control" id="channelAccessToken" name="line_access_token" placeholder="MessagingAPIを参照">
     </div>
     <div class="form-group">
         <div class="text-right">
