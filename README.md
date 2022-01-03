@@ -1,78 +1,25 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# テクモンアドベンチャー
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+[![IMAGE ALT TEXT HERE](thumbnailImage.png)](https://youtu.be/0sLqy5UFSpA)
 
-## About Laravel
+* 制作期間: 2020年11月~　7日間
+* 使用言語: HTML,CSS,JavaScript, GoogleFireBase
+* プロダクト紹介映像：
+https://youtu.be/0sLqy5UFSpA
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 概要
+「進化」をテーマにプログラミングをモンスターに勉強をさせ、日本から世界に通用するエンジニアリングモンスターを作る、というゲームです。自分自身がプログラミング学習者のため、学びと成長過程をゲームに落とし込むことができたら面白いと感じて、形にしてみました。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 利用環境/再現手順
+* firebasejs 8.0で製作したため、最新のfirebase環境では動作をしない可能性が高いです。　[register.html](https://github.com/worldwideweb13/Tecmon/blob/964ab9d44a910598bf5044aefaebd1712053673f/register.html) の23行目付近からFireBase(realtimeDB)への接続を行っています。コメントアウトの記述" //Your web app's Firebase configuration" 以下の部分からはご自身のfirebase利用環境の設定を書き込んで下さい。
+* データベースはrealtimeデータベースを利用しています。[tecmon-RealtimeDatabase-export.json](https://github.com/worldwideweb13/Tecmon/blob/964ab9d44a910598bf5044aefaebd1712053673f/tecmon-RealtimeDatabase-export.json)　にゲームデータをjson形式で記載しておりますのでこのファイルを　realtimedatabaseにアップロードして下さい。
+* FireBaseの設定を済ませ、[register.html](register.html)をブラウザで立ち上げれば、アプリは動作します。
+* VsCode推奨。拡張機能でLiveServerをインストール。[LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)経由でindex.htmlをブラウザで開くとアプリが動作します。
+* [index.html](https://github.com/worldwideweb13/Tecmon/blob/106b97e0da5932f9f59b4c0ec6a3f0c7f43e6a79/index.html) のコメントアウトの記述" //Your web app's Firebase configuration" 以下の部分からはご自身のfirebase利用環境の設定を書き込んで下さい。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ 
+### 開発の苦労した点
+ゲーム内のキャラクターモーションは全てゼロから実装したため、コードが肥大化し１ファイル１０００行近くコードを書くことになりました。。開発期間を1週間に区切ったため、ゲームを完成させるためにひたすらコードを書きまくりました。開発の途中でDB構造の欠陥にあたり、DBの再構築、影響箇所の再度修正を迫られたり、コードが肥大化した結果、エラーハンドリングが誰にも聞けない状態になり最後の方は修正作業にも数時間を費やす羽目になったりと、、アプリ開発の辛みを味わいました。しかし、これらの経験を通じて、DB、バック、フロントエンド開発といった基礎概念を身体で理解できた感覚を持てるようになり、以降からは自分の作りたいアプリを形にするアルゴリズムを体感的に描けるようになりました。
+本アプリの制作を通じ、コードを書けるようになる成長実感を掴めました。
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
