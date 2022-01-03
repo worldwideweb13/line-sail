@@ -1,4 +1,4 @@
-# テクモンアドベンチャー
+# line-sail
 
 [![IMAGE ALT TEXT HERE](thumbnailImage.png)](https://youtu.be/0sLqy5UFSpA)
 
