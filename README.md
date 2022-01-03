@@ -9,7 +9,7 @@
 https://youtu.be/0sLqy5UFSpA
 
 ### 概要
-「進化」をテーマにプログラミングをモンスターに勉強をさせ、日本から世界に通用するエンジニアリングモンスターを作る、というゲームです。自分自身がプログラミング学習者のため、学びと成長過程をゲームに落とし込むことができたら面白いと感じて、形にしてみました。
+中小企業向けにLineを使用した顧客へのメッセージングツールを作成しました。
 
 ### 利用環境/再現手順
 * firebasejs 8.0で製作したため、最新のfirebase環境では動作をしない可能性が高いです。　[register.html](https://github.com/worldwideweb13/Tecmon/blob/964ab9d44a910598bf5044aefaebd1712053673f/register.html) の23行目付近からFireBase(realtimeDB)への接続を行っています。コメントアウトの記述" //Your web app's Firebase configuration" 以下の部分からはご自身のfirebase利用環境の設定を書き込んで下さい。
