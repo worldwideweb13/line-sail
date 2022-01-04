@@ -3,7 +3,7 @@
 [![IMAGE ALT TEXT HERE](thumbnailImage.png)](https://youtu.be/0sLqy5UFSpA)
 
 * 制作期間: 2021年10月~　11月　30日間
-* 使用技術: Laravel,BootStrap,Jquery,Html,CSS
+* 使用技術: Laravel,MySQL,BootStrap,Jquery,Html,CSS
 * 使用API: LineメッセージAPI(Liff)
 * プロダクト紹介映像：
 https://youtu.be/0sLqy5UFSpA
@@ -12,8 +12,8 @@ https://youtu.be/0sLqy5UFSpA
 中小企業向けにLineを使用した顧客へのメッセージングツールを作成しました。Line-sail上から登録した顧客へのメッセージ送信機能、フレンドの登録機能等を実装しています。
 
 ### 利用環境/再現手順
-* LineDeveloperアカウントにてラインチャンネルを事前に作成する必要があります。
-* [index.html](https://github.com/worldwideweb13/Tecmon/blob/106b97e0da5932f9f59b4c0ec6a3f0c7f43e6a79/index.html) のコメントアウトの記述" //Your web app's Firebase configuration" 以下の部分からはご自身のfirebase利用環境の設定を書き込んで下さい。
+* LineDeveloperアカウントにてラインチャンネルを事前に作成する必要があります。(チャンネルはlineメッセージAPIを利用する設定にすること)
+* テストデータはSeederを利用して作成しています。
 
  
 ### 開発の苦労した点
