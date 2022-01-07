@@ -21,6 +21,6 @@ https://youtu.be/0sLqy5UFSpA
 
  
 ### 開発の苦労した点
-Laravelを使用したLineミニアプリの作成事例の文献が中々見つからず、手探りでの作成になりました。LinePushMesagingAPIの
+Laravelを使用したLineミニアプリの作成事例の文献が中々見つからず、手探りでの作成になりました。本アプリの作成を通じ、LineBotAPIとPushMesagingAPIの作成の流れを大まかに把握することができました。
 
 
