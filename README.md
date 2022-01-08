@@ -18,11 +18,9 @@ https://youtu.be/0sLqy5UFSpA
 ### 利用環境/再現手順
 * Laravel6,php8系
 * LineDeveloperアカウントにてラインチャンネルを事前に作成する必要があります。(チャンネルはlineメッセージAPIを利用する設定にすること)
-* 
 * テストデータはSeederを利用して作成しています。
 
  
 ### 開発の苦労した点
 Laravelを使用したLineミニアプリの作成事例の文献が中々見つからず、手探りでの作成になりました。本アプリの作成を通じ、LineBotAPIとPushMesagingAPIの作成の流れを大まかに把握することができました。
-
 
