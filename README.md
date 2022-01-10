@@ -17,7 +17,7 @@ https://youtu.be/0sLqy5UFSpA
 
 ### 利用環境/再現手順
 * Laravel6,php8系
-* LineDeveloperアカウントにてラインチャンネルを事前に作成する必要があります。(チャンネルはlineメッセージAPIを利用する設定にすること)
+* [LineDeveloperアカウント](https://developers.line.biz/ja/)にてラインチャンネルを事前に作成する必要があります。(チャンネルはlineメッセージAPIを利用する設定にすること)
 * DBはgs_db.sqlをMySqlにインポートして下さい。テストデータが既に含まれているデータファルになりますのでSeederファイルの利用は不要です。
 * テストデータの編集、流し込みも可能です。その際はSeederを利用して作成しておりますのでこちらを参照ください。
 
