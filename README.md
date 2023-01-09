@@ -13,6 +13,7 @@ https://youtu.be/0sLqy5UFSpA
 * 登録ラインチャンネル一覧表示
 * チェンネルフレンド一覧表示
 * LinePushメッセージ送信
+---
 
 ### 利用環境/再現手順
 * Laravel6,php8系
