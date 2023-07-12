@@ -1,6 +1,5 @@
 # line-sail
 
-
 * 制作期間: 2021年10月~　11月　30日間
 * 使用技術: Laravel,MySQL,BootStrap,Jquery,Html,CSS
 * 使用API: LineメッセージAPI(Liff)
