@@ -1,13 +1,12 @@
 # line-sail
 
+### 概要
 * 制作期間: 2021年10月~　11月　30日間
 * 使用技術: Laravel,MySQL,BootStrap,Jquery,Html,CSS
 * 使用API: LineメッセージAPI(Liff)
 * プロダクト紹介映像：
 https://youtu.be/0sLqy5UFSpA
----
 
-### 概要
 中小企業向けにLineを使用した顧客へのメッセージングツールを作成しました。以下の機能を実装しています。基本的には、フリーメール(gmailなど)のLine版です。
 * メッセージ一覧表示
 * 登録ラインチャンネル一覧表示
